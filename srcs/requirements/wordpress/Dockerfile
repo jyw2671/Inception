@@ -3,6 +3,7 @@
 FROM debian:buster
 
 RUN apt-get -y update && \
+    apt-get -y upgrade && \
     apt-get -y install php7.3 \
     php-fpm \
     php-cli \
@@ -18,4 +19,4 @@ EXPOSE 9000
 
 ENTRYPOINT [ "/bin/bash" ]
 
-CMD [ "wordpress.sh" ]
+CMD [ "setup.sh" ]
