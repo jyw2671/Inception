@@ -8,4 +8,7 @@ RUN apt-get -y update && \
 
 COPY ./tools/* ./
 
+RUN mv inception.crt /etc/ssl/certs/inception.crt;  \
+    mv inception.key /etc/ssl/certs/inception.key;
+
 CMD ["-g", "daemon off;"]
