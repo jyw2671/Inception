@@ -6,7 +6,7 @@ rm /var/www/html/wp-config-sample.php
 cp wp-config.php /var/www/html/wp-config.php
 chown -R www-data:www-data /var/www/html
 
-# wordpress client install
+# wordpress cli(command line interface) install
 wp core download --locale=ko_KR --allow-root
 until wp core install --url=$DOMAIN_NAME --title='WP for inception' --admin_user=yjung --admin_password=password --admin_email=yjung@student.42seoul.com --skip-email --path='/var/www/html/'; do
 sleep 0.5
