@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 
 services:
     mariadb:
@@ -8,7 +8,7 @@ services:
         env_file:
             - ".env"
         volumes:
-            - db:/var/lib/mysql
+            - db_vol:/var/lib/mysql
         expose:
             - "3306"
         networks:
@@ -20,7 +20,7 @@ services:
         env_file:
             - ".env"
         volumes:
-            - wp:/var/www/html
+            - wp_vol:/var/www/html
         ports:
             - "443:443"
         networks:
@@ -30,7 +30,7 @@ services:
         container_name: wordpress
         restart: always
         volumes:
-            - wp:/var/www/html
+            - wp_vol:/var/www/html
         expose:
             - "9000"
         networks:
@@ -41,16 +41,17 @@ networks:
         driver: bridge
 
 volumes:
-    db:
+    db_vol:
         driver: local
         driver_opts:
             type: 'none'
             o: 'bind'
-            device: '/home/yjung/data/db'
-    wp:
+            device: '/Users/yjung/Desktop/test/Inception/db_vol'
+            # device: '/Users/yjung/data/db_vol'
+    wp_vol:
         driver: local
         driver_opts:
             type: 'none'
             o: 'bind'
-            device: '/home/yjung/data/wp'
-
+            device: '/Users/yjung/Desktop/test/Inception/wp_vol'
+            # device: '/Users/yjung/data/wp_vol'
