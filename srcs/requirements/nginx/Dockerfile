@@ -18,8 +18,5 @@ RUN openssl req -newkey rsa:4096 -days 365 -nodes -x509\
 RUN cp ./default /etc/nginx/sites-available/default;
 
 EXPOSE 443
-# ENTRYPOINT ["nginx"]
-# CMD ["-g", "daemon off;"]
-
-ENTRYPOINT [ "/bin/bash" ]
-CMD ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["nginx"]
+CMD ["-g", "daemon off;"]
