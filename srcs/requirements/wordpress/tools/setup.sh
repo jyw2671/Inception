@@ -18,4 +18,4 @@ if [! -e /var/www/html/index.php]; then
 fi
 
 # run wordpress foreground
-php-fpm7.3 --nodaemonize
+exec php-fpm7.3 --nodaemonize
