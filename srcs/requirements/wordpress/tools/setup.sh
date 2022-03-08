@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [! -e /var/www/html/index.php]; then
+if [ ! -e "/var/www/html/index.php" ]; then
 	# wordpress setup
 	cp -R /wordpress/* /var/www/html/
 	rm /var/www/html/wp-config-sample.php
