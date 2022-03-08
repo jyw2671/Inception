@@ -4,25 +4,12 @@ FROM debian:buster
 
 RUN apt-get -y update && \
     apt-get -y upgrade && \
-    apt-get -y install nginx vim curl
+    apt-get -y install nginx vim curl gettext openssl
 
-COPY ./tools/* ./
+COPY /tools/www.conf.template /etc/nginx/conf.d/www.conf.template
 
-RUN openssl req -newkey rsa:4096 -days 365 -nodes -x509 \
-	# -subj "/C=KR/ST=SEOUL/L=Gaepo-dong/O=42Seoul/OU=yjung/CN=$DOMAIN_NAME" \
-	# -keyout /etc/ssl/certs/inception.$DOMAIN_NAME.key \
-	# -out /etc/ssl/certs/inception.$DOMAIN_NAME.crt; \
-	# chmod 640 /etc/ssl/certs/inception.$DOMAIN_NAME.*;
-
-RUN openssl req -newkey rsa:4096 -days 365 -nodes -x509\
-	-subj "/C=KR/ST=SEOUL/L=Gaepo-dong/O=42Seoul/OU=yjung/CN=localhost"\
-	-keyout localhost.dev.key -out localhost.dev.crt; \
-	mv localhost.dev.crt /etc/ssl/certs/;	\
-	mv localhost.dev.key /etc/ssl/private/; \
-	chmod 600 etc/ssl/certs/localhost.dev.crt etc/ssl/private/localhost.dev.key;
-
-RUN cp ./default /etc/nginx/sites-available/default;
+COPY /tools/setup.sh /
+ENTRYPOINT ["/setup.sh"]
 
 EXPOSE 443
-ENTRYPOINT ["nginx"]
-CMD ["-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]
