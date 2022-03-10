@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! -d /var/lib/mysql/$WP_DB_NAME ]; then
+if [ ! -d /var/lib/mysql/${WP_DB_NAME} ]; then
     # mysql setting
     service mysql start
     mysql -e "CREATE DATABASE IF NOT EXISTS ${WP_DB_NAME} DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci; \
