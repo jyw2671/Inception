@@ -11,6 +11,6 @@ if [ ! -d /var/lib/mysql/${WP_DB_NAME} ]; then
     mysqladmin -uroot -p${MYSQL_ROOT_PASSWORD} shutdown
 fi
 
-# service mysql stop
 # exec foreground
+service mysql stop
 exec mysqld_safe
