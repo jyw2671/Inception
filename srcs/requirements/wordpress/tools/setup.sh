@@ -9,7 +9,7 @@ if [ ! -e /var/www/html/index.php ]; then
 
 	# wordpress cli(command line interface) install
 	wp core download --locale=ko_KR --allow-root
-	until wp core install --url=${DOMAIN_NAME} --title='WP for inception' --admin_user=yjung --admin_password=password --admin_email=yjung@student.42seoul.com --skip-email --path='/var/www/html/'; do
+	until wp core install --url=${DOMAIN_NAME} --title='WP for inception' --admin_user=yjung --admin_password=password --admin_email=yjung@student.42seoul.com --allow-root --skip-email --path='/var/www/html/'; do
 	sleep 0.5
 	done
 
