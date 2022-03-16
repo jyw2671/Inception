@@ -11,7 +11,8 @@ RUN apt-get -y update && \
     php-mbstring \
     php-xml \
     wget \
-    curl
+    curl \
+    mariadb-client
 
 COPY ./tools/* ./
 
