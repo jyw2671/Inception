@@ -46,12 +46,10 @@ volumes:
         driver_opts:
             type: 'none'
             o: 'bind'
-            # device: '/Users/yjung/Desktop/test/Inception/db_vol'
-            device: '/Users/yjung/data/db_vol'
+            device: '/home/yjung/data/db_vol'
     wp_vol:
         driver: local
         driver_opts:
             type: 'none'
             o: 'bind'
-            # device: '/Users/yjung/Desktop/test/Inception/wp_vol'
-            device: '/Users/yjung/data/wp_vol'
+            device: '/home/yjung/data/wp_vol'
