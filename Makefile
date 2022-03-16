@@ -3,10 +3,10 @@ COMP_CMD = docker-compose
 YML = ./srcs/docker-compose.yml
 UP = up
 DOWN = down
-# DB_VOL_DATA = /home/yjung/data/db_vol
-# WP_VOL_DATA = /home/yjung/data/wp_vol
-DB_VOL_DATA = /Users/yjung/Desktop/test/Inception/db_vol
-WP_VOL_DATA = /Users/yjung/Desktop/test/Inception/wp_vol
+DB_VOL_DATA = /home/yjung/data/db_vol
+WP_VOL_DATA = /home/yjung/data/wp_vol
+# DB_VOL_DATA = /Users/yjung/Desktop/test/Inception/db_vol
+# WP_VOL_DATA = /Users/yjung/Desktop/test/Inception/wp_vol
 COMPOSE = $(COMP_CMD) -p $(NAME) -f $(YML)
 
 all :
