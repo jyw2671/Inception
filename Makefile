@@ -10,8 +10,8 @@ WP_VOL_DATA = /home/yjung/data/wp_vol
 COMPOSE = $(COMP_CMD) -p $(NAME) -f $(YML)
 
 all :
-	# mkdir /home/yjung/data
-	# mkdir /Users/yjung/data
+	mkdir /home/yjung/data
+	mkdir /Users/yjung/data
 	mkdir $(DB_VOL_DATA) $(WP_VOL_DATA)
 	$(COMPOSE) $(UP) -d --build
 
