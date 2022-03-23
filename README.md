@@ -2,11 +2,7 @@
 
 # 과제 내용 정리
 
----
-
 ## General guidelines
-
----
 
 - 이 프로젝트는 `가상 머신(virtual machine)`에서 실행
 - 프로젝트 구성에 필요한 모든 파일 `srcs` 폴더 안에 저장
@@ -14,8 +10,6 @@
 - 도커 사용과 관련된 많은 문서 보기
 
 ## Mandatory part
-
----
 
 - 모든 프로젝트는 `virtual-machine`에서 수행되어야 하고 `docker-compose`를 사용해야한다.
 - 각 `Docker image`는 반드시 해당 서비스와 같은 이름이어야 한다.
